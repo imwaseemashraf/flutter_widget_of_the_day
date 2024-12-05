@@ -27,6 +27,10 @@ class HomeScreen extends StatelessWidget {
                 InkWell(
                   onTap: () => AboutDialogWidgets(context),
                   child: ListTile(
+                    leading: Text(
+                      '${index + 1}',
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    ),
                     title: const Text("About Dialog"),
                     titleTextStyle:
                         const TextStyle(color: Colors.white, fontSize: 18),
