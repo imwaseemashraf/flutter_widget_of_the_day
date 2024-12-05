@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../widgets/about_dialog/about_dialog.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -17,15 +19,23 @@ class HomeScreen extends StatelessWidget {
         ),
         title: const Text("All Widgets List"),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            title: const Text("About Dialog"),
-            titleTextStyle: const TextStyle(color: Colors.white, fontSize: 18),
-            tileColor: Colors.black.withOpacity(0.3),
-          ),
-        ],
-      ),
+      body: ListView.builder(
+          itemCount: 1,
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                InkWell(
+                  onTap: () => AboutDialogWidgets(context),
+                  child: ListTile(
+                    title: const Text("About Dialog"),
+                    titleTextStyle:
+                        const TextStyle(color: Colors.white, fontSize: 18),
+                    tileColor: Colors.black.withOpacity(0.3),
+                  ),
+                ),
+              ],
+            );
+          }),
     );
   }
 }
